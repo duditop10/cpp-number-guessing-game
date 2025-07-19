@@ -5,12 +5,16 @@
 #include <algorithm>
 #include <limits>
 #include <map>
+#include <vector>
 
 enum Difficulty{
     Easy=1,
     Medium,
     Hard
 };
+
+std::vector<std::string> DifficultyNames = {"","Easy","Medium","Hard"};
+
 std::map<Difficulty, int> difficultyChances = {
     {Easy, 10},
     {Medium, 5},
@@ -96,7 +100,7 @@ void GetChoice(Difficulty choice, int& chances, bool& validChoice){
     }
     else{
         chances = difficultyChances[choice];
-        std::cout<<"You have selected the Easy difficulty ("<<difficultyChances[choice]<<" chances)"<<std::endl;
+        std::cout<<"You have selected the "<<DifficultyNames[choice]<<" difficulty ("<<difficultyChances[choice]<<" chances)"<<std::endl;
         validChoice=true;
     }
 
