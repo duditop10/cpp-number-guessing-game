@@ -126,6 +126,7 @@ void CheckGuess(const int randomNum, const int guess, int& chances, int& attempt
         std::cout<<"You have "<<chances<<" chances left"<<std::endl<<std::endl;
     }
     else{
+        attempts+=1;
         std::cout<<std::endl<<"Congratulations! You have guessed the number in "<<attempts<<" attempts!"<<std::endl;
         correctGuess=true;
     }
